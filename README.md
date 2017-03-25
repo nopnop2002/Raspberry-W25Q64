@@ -59,7 +59,7 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 Wireing  
 
-![w25q64](https://cloud.githubusercontent.com/assets/6020549/24319619/6742a124-1164-11e7-8017-8ee4d204d963.jpg)
+![w25q64](https://cloud.githubusercontent.com/assets/6020549/24319836/446fbc52-116b-11e7-9269-c4769eb4d8f9.jpg)
 
 ---
 
