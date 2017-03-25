@@ -1,19 +1,19 @@
 # Raspberry-W25Q64
 
-SPI Flush Memory W25Q64 Access Library for RaspberryPi
+SPI Flush Memory W25Q64 Access Library for RaspberryPi  
 I ported from here.  
 
 https://github.com/Tamakichi/Arduino-W25Q64
 
 ---
 
-// Start access
+// Start access  
 void W25Q64_begin(uint8_t spich);  
 
-// Get status register1
+// Get status register1  
 uint8_t W25Q64_readStatusReg1(void);  
 
-// Get status register2
+// Get status register2  
 uint8_t W25Q64_readStatusReg2(void);  
 
 // Get JEDEC ID(Manufacture, Memory Type,Capacity)  
