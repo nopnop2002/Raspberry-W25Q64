@@ -1,13 +1,13 @@
 # Raspberry-W25Q64
 
-SPI Flush Memory W25Q64 Access Library for RaspberryPi  
+SPI Flash Memory W25Q64 Access Library for RaspberryPi  
 I ported from here.  
 
 https://github.com/Tamakichi/Arduino-W25Q64
 
 ---
 
-// Start access  
+// Start Flash  
 void W25Q64_begin(uint8_t spich);  
 
 // Get status register1  
