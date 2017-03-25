@@ -1,7 +1,5 @@
 //
-// フラッシュメモリW25Q64 からのフォントデータ取得
-// 作成 2014/10/14
-// 修正 2016/05/21
+// Flash Memory W25Q64 Access Library for RaspberryPi
 //
 
 #include <stdio.h>
