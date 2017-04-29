@@ -65,10 +65,10 @@ Wireing
 
 ![w25q64-1](https://cloud.githubusercontent.com/assets/6020549/24319621/77591c5a-1164-11e7-88d0-052a09feb6e5.jpg)
 
-JEDEC  
+JEDEC ID  
 Byte1 : ManufacturerID(0xef=Winbond)  
 Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
-Byte3 : Capacity(2^0x17=64M Bit)  
+Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)  
 
 First 10Byte : ASCII 0-9  
 Next 32Byte : ASCII A-Z  
