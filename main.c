@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
+#include <wiringPiSPI.h>
 #include "W25Q64.h"
 
 #define SPI_CHANNEL 0 // /dev/spidev0.0
@@ -22,8 +23,6 @@
 // n(in)  : 表示データ数
 //
 void dump(uint8_t *dt, uint32_t n) {
-  uint32_t sz;
-  char buf[64];
   uint16_t clm = 0;
   uint8_t data;
   uint8_t sum;
@@ -31,7 +30,6 @@ void dump(uint8_t *dt, uint32_t n) {
   uint8_t total =0;
   uint32_t saddr =0;
   uint32_t eaddr =n-1;
-  sz = eaddr -saddr;
   
   printf("----------------------------------------------------------\n");
   uint16_t i;
@@ -63,7 +61,7 @@ void dump(uint8_t *dt, uint32_t n) {
   printf("|%02x \n\n",total);
 }
 
-void main() {
+int main() {
     uint8_t buf[256];     // 取得データ
     uint8_t wdata[16];    // 書込みデータ
     uint8_t i;
@@ -159,6 +157,5 @@ void main() {
     // Get fron Status Register2
     buf[0] = W25Q64_readStatusReg2();
     printf("Status Register-2: %x\n",buf[0]);
+    return 0;
 }
-
-

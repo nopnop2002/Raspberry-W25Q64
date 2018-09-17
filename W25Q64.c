@@ -50,6 +50,8 @@
 #define SPI_CHANNEL 0 // /dev/spidev0.0
 //#define SPI_CHANNEL 1 // /dev/spidev0.1
 
+#define UNUSED(a) ((void)(a))
+
 //static uint8_t cspin ;
 static uint8_t _spich;
 
@@ -76,8 +78,9 @@ void W25Q64_begin(uint8_t spich) {
 // 戻り値: ステータスレジスタ1の値
 //
 uint8_t W25Q64_readStatusReg1(void) {
-  uint8_t data[2];
+  unsigned char data[2];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_READ_STATUS_R1;
   data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
@@ -90,8 +93,9 @@ uint8_t W25Q64_readStatusReg1(void) {
 // 戻り値: ステータスレジスタ2の値
 //
 uint8_t W25Q64_readStatusReg2(void) {
-  uint8_t data[2];
+  unsigned char data[2];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_READ_STATUS_R2;
   data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
@@ -104,8 +108,9 @@ uint8_t W25Q64_readStatusReg2(void) {
 // d(out) :Manufacture, Memory Type,Capacityの３バイトを格納する
 //
 void W25Q64_readManufacturer(uint8_t* d) {
-  uint8_t data[4];
+  unsigned char data[4];
   int rc;
+  UNUSED(rc);
   memset(data,0,sizeof(data));
   data[0] = CMD_JEDEC_ID;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
@@ -118,8 +123,9 @@ void W25Q64_readManufacturer(uint8_t* d) {
 // d(out): Unique ID 7バイトを返す  
 //
 void W25Q64_readUniqieID(uint8_t* d) {
-  uint8_t data[12];
+  unsigned char data[12];
   int rc;
+  UNUSED(rc);
   memset(data,0,sizeof(data));
   data[0] = CMD_READ_UNIQUE_ID;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
@@ -132,8 +138,9 @@ void W25Q64_readUniqieID(uint8_t* d) {
 // 戻り値: true:作業 、false:アイドル中
 //
 bool W25Q64_IsBusy() {
-  uint8_t data[2];
+  unsigned char data[2];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_READ_STATUS_R1;
   data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
@@ -149,8 +156,9 @@ bool W25Q64_IsBusy() {
 //　パワーダウン指定 
 //
 void W25Q64_powerDown(void) {
-  uint8_t data[1];
+  unsigned char data[1];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_POWER_DOWN;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
 //  spcDump("powerDown",rc,data,1);
@@ -160,8 +168,9 @@ void W25Q64_powerDown(void) {
 // 書込み許可設定
 //
 void W25Q64_WriteEnable(void) {
-  uint8_t data[1];
+  unsigned char data[1];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_WRIRE_ENABLE;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
 //  spcDump("WriteEnable",rc,data,1);
@@ -171,8 +180,9 @@ void W25Q64_WriteEnable(void) {
 // 書込み禁止設定
 //
 void W25Q64_WriteDisable(void) {
-  uint8_t data[1];
+  unsigned char data[1];
   int rc;
+  UNUSED(rc);
   data[0] = CMD_WRITE_DISABLE;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
 //  spcDump("WriteDisable",rc,data,1);
@@ -184,10 +194,10 @@ void W25Q64_WriteDisable(void) {
 // n(in):読込データ数
 //
 uint16_t W25Q64_read(uint32_t addr,uint8_t *buf,uint16_t n){ 
-  uint8_t *data;
+  unsigned char *data;
   int rc;
 
-  data = (char*)malloc(n+4);
+  data = (unsigned char*)malloc(n+4);
   data[0] = CMD_READ_DATA;
   data[1] = (addr>>16) & 0xFF;     // A23-A16
   data[2] = (addr>>8) & 0xFF;      // A15-A08
@@ -205,10 +215,10 @@ uint16_t W25Q64_read(uint32_t addr,uint8_t *buf,uint16_t n){
 // n(in):読込データ数
 //
 uint16_t W25Q64_fastread(uint32_t addr,uint8_t *buf,uint16_t n) {
-  uint8_t *data;
+  unsigned char *data;
   int rc;
 
-  data = (char*)malloc(n+5);
+  data = (unsigned char*)malloc(n+5);
   data[0] = CMD_FAST_READ;
   data[1] = (addr>>16) & 0xFF;     // A23-A16
   data[2] = (addr>>8) & 0xFF;      // A15-A08
@@ -229,8 +239,9 @@ uint16_t W25Q64_fastread(uint32_t addr,uint8_t *buf,uint16_t n) {
 //         アドレス23ビットのうち上位 11ビットがセクタ番号の相当する。下位12ビットはセクタ内アドレスとなる。
 //
 bool W25Q64_eraseSector(uint16_t sect_no, bool flgwait) {
-  uint8_t data[4];
+  unsigned char data[4];
   int rc;
+  UNUSED(rc);
   uint32_t addr = sect_no;
   addr<<=12;
 
@@ -257,8 +268,9 @@ bool W25Q64_eraseSector(uint16_t sect_no, bool flgwait) {
 //         アドレス23ビットのうち上位 7ビットがブロックの相当する。下位16ビットはブロック内アドレスとなる。
 //
 bool W25Q64_erase64Block(uint16_t blk_no, bool flgwait) {
-  uint8_t data[4];
+  unsigned char data[4];
   int rc;
+  UNUSED(rc);
   uint32_t addr = blk_no;
   addr<<=16;
 
@@ -285,8 +297,9 @@ bool W25Q64_erase64Block(uint16_t blk_no, bool flgwait) {
 //         アドレス23ビットのうち上位 8ビットがブロックの相当する。下位15ビットはブロック内アドレスとなる。
 //
 bool W25Q64_erase32Block(uint16_t blk_no, bool flgwait) {
-  uint8_t data[4];
+  unsigned char data[4];
   int rc;
+  UNUSED(rc);
   uint32_t addr = blk_no;
   addr<<=15;
 
@@ -311,8 +324,9 @@ bool W25Q64_erase32Block(uint16_t blk_no, bool flgwait) {
 //   補足: データシートでは消去に通常 15s 、最大30sかかると記載されている
 //
 bool W25Q64_eraseAll(bool flgwait) {
-  uint8_t data[1];
+  unsigned char data[1];
   int rc;
+  UNUSED(rc);
 
   W25Q64_WriteEnable();  
   data[0] = CMD_CHIP_ERASE;
@@ -333,12 +347,10 @@ bool W25Q64_eraseAll(bool flgwait) {
 // n(in)       : 書込みバイト数(0～256)
 //
 uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* buf, uint8_t n) {
-//  uint8_t data[4];
-  uint8_t *data;
+  unsigned char *data;
   int rc;
 
   uint32_t addr = sect_no;
-  int i;
   addr<<=12;
   addr += inaddr;
 
@@ -348,7 +360,7 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* buf, uint8
     return 0;  
   }
 
-  data = (char*)malloc(n+4);
+  data = (unsigned char*)malloc(n+4);
   data[0] = CMD_PAGE_PROGRAM;
   data[1] = (addr>>16) & 0xff;
   data[2] = (addr>>8) & 0xff;
