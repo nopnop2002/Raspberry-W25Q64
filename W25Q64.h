@@ -12,7 +12,7 @@ void W25Q64_readManufacturer(uint8_t* d);
 // Unique IDの取得
 void W25Q64_readUniqieID(uint8_t* d);
 // 書込み等の処理中チェック
-bool W25Q64_IsBusy();
+bool W25Q64_IsBusy(void);
 // パワーダウン指定 
 void W25Q64_powerDown(void);
 // 書込み許可設定
@@ -32,5 +32,5 @@ bool  W25Q64_erase32Block(uint16_t blk_no, bool flgwait);
 // 全領域の消去
 bool  W25Q64_eraseAll(bool flgwait);
 // データの書き込み
-uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint8_t n);
+uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint16_t n);
 
