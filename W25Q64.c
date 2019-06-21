@@ -9,9 +9,9 @@
 #include <string.h>
 #include <wiringPi.h>
 #include <wiringPiSPI.h>
+
 #include "W25Q64.h"
 
-#define SPI_SLAVE_SEL_PIN    10     // チップセレクトピン番号
 #define MAX_BLOCKSIZE        128    // ブロック総数
 #define MAX_SECTORSIZE       2048   // 総セクタ数
 
@@ -47,12 +47,9 @@
 #define SR1_BUSY_MASK	0x01
 #define SR1_WEN_MASK	0x02
 
-#define SPI_CHANNEL 0 // /dev/spidev0.0
-//#define SPI_CHANNEL 1 // /dev/spidev0.1
 
 #define UNUSED(a) ((void)(a))
 
-//static uint8_t cspin ;
 static uint8_t _spich;
 
 void spcDump(char *id,int rc, uint8_t *data,int len) {
@@ -68,7 +65,6 @@ void spcDump(char *id,int rc, uint8_t *data,int len) {
 //
 // フラッシュメモリ W25Q64の利用開始
 // 
-//void W25Q64_begin(uint8_t cs) {
 void W25Q64_begin(uint8_t spich) {
     _spich = spich;
 }
@@ -82,7 +78,6 @@ uint8_t W25Q64_readStatusReg1(void) {
   int rc;
   UNUSED(rc);
   data[0] = CMD_READ_STATUS_R1;
-  //data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
   //spcDump("readStatusReg1",rc,data,2);
   return data[1];
@@ -97,7 +92,6 @@ uint8_t W25Q64_readStatusReg2(void) {
   int rc;
   UNUSED(rc);
   data[0] = CMD_READ_STATUS_R2;
-  //data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
   //spcDump("readStatusReg2",rc,data,2);
   return data[1];
@@ -142,13 +136,11 @@ bool W25Q64_IsBusy(void) {
   int rc;
   UNUSED(rc);
   data[0] = CMD_READ_STATUS_R1;
-  //data[1] = 0xff;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
   //spcDump("IsBusy",rc,data,2);
   uint8_t r1;
   r1 = data[1];
-  if(r1 & SR1_BUSY_MASK)
-    return true;
+  if(r1 & SR1_BUSY_MASK) return true;
   return false;
 }
 
