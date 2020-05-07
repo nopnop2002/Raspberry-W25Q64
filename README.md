@@ -78,11 +78,12 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 - W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
+   
 JEDEC ID:  
 Byte1 : ManufacturerID(0xef=Winbond)  
 Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
 Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)  
-
+   
 First 10Byte : ASCII 0-9  
 Next 32Byte : ASCII A-Z  
 
@@ -100,6 +101,7 @@ Next 32Byte : ASCII A-Z
 
 - MX25L6473E   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
+   
 JEDEC ID:  
 Byte1 : ManufacturerID(0xc2=Macronix)  
 Byte2 : MemoryType(0x20)  
