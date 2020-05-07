@@ -28,10 +28,10 @@ uint8_t W25Q64_readStatusReg1(void);
 uint8_t W25Q64_readStatusReg2(void);  
 
 // Get JEDEC ID(Manufacture, Memory Type,Capacity)  
-void W25Q64_readManufacturer(uint8_t* d);  
+void W25Q64_readManufacturer(uint8_t* jedc);  
 
 // Get Unique ID  
-void W25Q64_readUniqieID(uint8_t* d);  
+void W25Q64_readUniqieID(uint8_t* id);  
 
 // Check busy  
 bool W25Q64_IsBusy(void);  
@@ -76,7 +76,8 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 # Output
 
-![w25q64-1](https://cloud.githubusercontent.com/assets/6020549/24319621/77591c5a-1164-11e7-88d0-052a09feb6e5.jpg)
+- W25Q64   
+![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
 
 JEDEC ID:  
 Byte1 : ManufacturerID(0xef=Winbond)  
@@ -85,4 +86,16 @@ Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)
 
 First 10Byte : ASCII 0-9  
 Next 32Byte : ASCII A-Z  
+
+- W25Q80   
+![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
+
+- W25Q16   
+![w25q16](https://user-images.githubusercontent.com/6020549/81263655-0788bb80-907b-11ea-89ae-092459ec8fad.jpg)
+
+- W25Q32   
+![w25q32](https://user-images.githubusercontent.com/6020549/81263666-0bb4d900-907b-11ea-9a55-f90f2a60bd5b.jpg)
+
+- W25Q128   
+![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 

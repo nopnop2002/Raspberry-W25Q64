@@ -62,6 +62,7 @@ void dump(uint8_t *dt, uint32_t n) {
 }
 
 int main() {
+    uint8_t jedc[3];      // JEDEC-ID
     uint8_t buf[256];     // 取得データ
     uint8_t wdata[16];    // 書込みデータ
     uint8_t i;
@@ -80,10 +81,11 @@ int main() {
     
     // JEDEC IDの取得テスト
     // JEDEC ID Get
-    W25Q64_readManufacturer(buf);
+    //W25Q64_readManufacturer(buf);
+    W25Q64_readManufacturer(jedc);
     printf("JEDEC ID : ");
     for (i=0; i< 3; i++) {
-      printf("%x ",buf[i]);
+      printf("%x ",jedc[i]);
     }
     printf("\n");
     
@@ -91,7 +93,7 @@ int main() {
     // Unique ID Get
     W25Q64_readUniqieID(buf);
     printf("Unique ID : ");
-    for (i=0; i< 7; i++) {
+    for (i=0; i< 8; i++) {
       printf("%x ",buf[i]);
     }
     printf("\n");
