@@ -114,17 +114,17 @@ void W25Q64_readManufacturer(uint8_t* d) {
 
 //
 // Unique IDの取得
-// d(out): Unique ID 7バイトを返す  
+// d(out): Unique ID 8バイトを返す  
 //
 void W25Q64_readUniqieID(uint8_t* d) {
-  unsigned char data[12];
+  unsigned char data[13];
   int rc;
   UNUSED(rc);
   memset(data,0,sizeof(data));
   data[0] = CMD_READ_UNIQUE_ID;
   rc = wiringPiSPIDataRW (_spich,data,sizeof(data));
-  //spcDump("readUniqieID",rc,data,12);
-  memcpy(d,&data[5],7);
+  //spcDump("readUniqieID",rc,data,13);
+  memcpy(d,&data[5],8);
 }
 
 //
