@@ -24,13 +24,13 @@ void W25Q64_begin(uint8_t spich);
 // Get status register1  
 uint8_t W25Q64_readStatusReg1(void);  
 
-// Get status register2  
+// Get status register2(Winbond only)  
 uint8_t W25Q64_readStatusReg2(void);  
 
 // Get JEDEC ID(Manufacture, Memory Type,Capacity)  
 void W25Q64_readManufacturer(uint8_t* jedc);  
 
-// Get Unique ID  
+// Get Unique ID(Winbond only)  
 void W25Q64_readUniqieID(uint8_t* id);  
 
 // Check busy  
@@ -78,7 +78,6 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 - W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
-
 JEDEC ID:  
 Byte1 : ManufacturerID(0xef=Winbond)  
 Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
@@ -98,4 +97,11 @@ Next 32Byte : ASCII A-Z
 
 - W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
+
+- MX25L6473E   
+![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
+JEDEC ID:  
+Byte1 : ManufacturerID(0xc2=Macronix)  
+Byte2 : MemoryType(0x20)  
+Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)  
 
