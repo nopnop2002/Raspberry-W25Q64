@@ -12,8 +12,8 @@
 
 #include "W25Q64.h"
 
-#define MAX_BLOCKSIZE        128    // ブロック総数
-#define MAX_SECTORSIZE       2048   // 総セクタ数
+//#define MAX_BLOCKSIZE        128    // ブロック総数
+//#define MAX_SECTORSIZE       2048   // 総セクタ数
 
 #define CMD_WRIRE_ENABLE      0x06
 #define CMD_WRITE_DISABLE     0x04
@@ -129,7 +129,7 @@ void W25Q64_readUniqieID(uint8_t* d) {
 
 //
 // 書込み等の処理中チェック
-// 戻り値: true:作業 、false:アイドル中
+// 戻り値: true:書き込み中 、false:アイドル中
 //
 bool W25Q64_IsBusy(void) {
   unsigned char data[2];
@@ -203,7 +203,7 @@ uint16_t W25Q64_read(uint32_t addr,uint8_t *buf,uint16_t n){
 
 //
 // 高速データの読み込み
-// addr(in): 読込開始アドレス (24ビット 0x00000 - 0xFFFFF)
+// addr(in): 読込開始アドレス (24ビット 0x000000 - 0xFFFFFF)
 // n(in):読込データ数
 //
 uint16_t W25Q64_fastread(uint32_t addr,uint8_t *buf,uint16_t n) {
@@ -225,11 +225,12 @@ uint16_t W25Q64_fastread(uint32_t addr,uint8_t *buf,uint16_t n) {
 
 //
 // セクタ単位消去(4kb空間単位でデータの消去を行う)
-// sect_no(in) セクタ番号(0 - 2048)
+// sect_no(in) セクタ番号(0 - 4095)
 // flgwait(in) true:処理待ちを行う false:待ち無し
 // 戻り値: true:正常終了 false:失敗
 //  補足： データシートでは消去に通常 30ms 、最大400msかかると記載されている
-//         アドレス23ビットのうち上位 11ビットがセクタ番号の相当する。下位12ビットはセクタ内アドレスとなる。
+//         アドレス24ビットのうち上位12ビットがセクタ番号に相当する。
+//         下位12ビットはセクタ内アドレスとなる。
 //
 bool W25Q64_eraseSector(uint16_t sect_no, bool flgwait) {
   unsigned char data[4];
@@ -254,11 +255,12 @@ bool W25Q64_eraseSector(uint16_t sect_no, bool flgwait) {
 
 //
 // 64KBブロック単位消去(64kb空間単位でデータの消去を行う)
-// blk_no(in) ブロック番号(0 - 127)
+// blk_no(in) ブロック番号(0 - 255)
 // flgwait(in) true:処理待ちを行う false:待ち無し
 // 戻り値: true:正常終了 false:失敗
 //   補足: データシートでは消去に通常 150ms 、最大1000msかかると記載されている
-//         アドレス23ビットのうち上位 7ビットがブロックの相当する。下位16ビットはブロック内アドレスとなる。
+//         アドレス24ビットのうち上位8ビットがブロック番号に相当する。
+//         下位16ビットはブロック内アドレスとなる。
 //
 bool W25Q64_erase64Block(uint16_t blk_no, bool flgwait) {
   unsigned char data[4];
@@ -285,11 +287,12 @@ bool W25Q64_erase64Block(uint16_t blk_no, bool flgwait) {
 
 //
 // 32KBブロック単位消去(32kb空間単位でデータの消去を行う)
-// blk_no(in) ブロック番号(0 - 255)
+// blk_no(in) ブロック番号(0 - 511)
 // flgwait(in) true:処理待ちを行う false:待ち無し
 // 戻り値: true:正常終了 false:失敗
 //   補足: データシートでは消去に通常 120ms 、最大800msかかると記載されている
-//         アドレス23ビットのうち上位 8ビットがブロックの相当する。下位15ビットはブロック内アドレスとなる。
+//         アドレス24ビットのうち上位9ビットがブロック番号に相当する。
+//         下位15ビットはブロック内アドレスとなる。
 //
 bool W25Q64_erase32Block(uint16_t blk_no, bool flgwait) {
   unsigned char data[4];
@@ -340,8 +343,8 @@ bool W25Q64_eraseAll(bool flgwait) {
 
 //
 // データの書き込み
-// sect_no(in) : セクタ番号(0x00 - 0x7FF) 
-// inaddr(in)  : セクタ内アドレス(0x00-0xFFF)
+// sect_no(in) : セクタ番号(0x000 - 0xFFF) 
+// inaddr(in)  : セクタ内アドレス(0x000-0xFFF)
 // data(in)    : 書込みデータ格納アドレス
 // n(in)       : 書込みバイト数(0～256)
 //
