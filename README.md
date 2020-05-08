@@ -86,9 +86,7 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 ---
 
-# Output
-
-## Winbond
+# Winbond
 
 - W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
@@ -113,7 +111,7 @@ Next 32Byte : ASCII A-Z
 - W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 
-## MACRONIX   
+# MACRONIX   
 
 - MX25L6473E   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
