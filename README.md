@@ -76,9 +76,9 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 # Memory size   
 
-|Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|
-|:---|:---|:---|:---|
-|W25Q80|0x0FFFFF|256|32|
+|Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
+|:---|:---|:---|:---|:---|
+|W25Q80|0x0FFFFF|256|32|16|
 
 
 |Device|Address range|Number of 4K Sectors|Number of 32K Blocks||Number of 64K Blocks|
