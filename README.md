@@ -74,7 +74,7 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 ---
 
-# Memory size   
+# Winbond
 
 |Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
 |:---|:---|:---|:---|:---|
@@ -83,10 +83,6 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 |W25Q32|0x3FFFFF|1024|128|64|
 |W25Q64|0x7FFFFF|2048|256|128|
 |W25Q128|0xFFFFFF|4096|512|256|
-
----
-
-# Winbond
 
 - W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
@@ -112,6 +108,11 @@ Next 32Byte : ASCII A-Z
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 
 # MACRONIX   
+
+|Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
+|:---|:---|:---|:---|:---|
+|MX25L6473E|0x7FFFFF|2048|256|128|
+|MX25L12835F|0xFFFFFF|4096|512|256|
 
 - MX25L6473E   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
