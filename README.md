@@ -129,7 +129,9 @@ Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)
 
 ---
 
-# I have tested these but they are not working properly.   
+# Note   
+I tested these.   
+But I couldn't get it working.   
 - GD25Q64   
 - SST25VF016B   
 - SST25VF032B   
