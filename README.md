@@ -107,6 +107,8 @@ Next 32Byte : ASCII A-Z
 - W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 
+---
+
 # MACRONIX   
 
 |Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
