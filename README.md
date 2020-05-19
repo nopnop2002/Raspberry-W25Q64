@@ -7,6 +7,12 @@ https://github.com/Tamakichi/Arduino-W25Q64
 
 ---
 
+# Software requirement
+
+WiringPi Library   
+
+---
+
 # Build
 ```
 git clone https://github.com/nopnop2002/Raspberry-W25Q64
