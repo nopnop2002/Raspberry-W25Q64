@@ -90,25 +90,25 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 |W25Q64|0x7FFFFF|2048|256|128|EF-40-17|
 |W25Q128|0xFFFFFF|4096|512|256|EF-40-18|
 
-- W25Q64   
-![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
-   
+- W25Q80   
+![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
+
 JEDEC ID:  
 Byte1 : ManufacturerID(0xef=Winbond)  
 Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
-Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)  
-   
+Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)  
+
 First 10Byte : ASCII 0-9  
 Next 32Byte : ASCII A-Z  
-
-- W25Q80   
-![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
 
 - W25Q16   
 ![w25q16](https://user-images.githubusercontent.com/6020549/81263655-0788bb80-907b-11ea-89ae-092459ec8fad.jpg)
 
 - W25Q32   
 ![w25q32](https://user-images.githubusercontent.com/6020549/81263666-0bb4d900-907b-11ea-9a55-f90f2a60bd5b.jpg)
+
+- W25Q64   
+![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
 
 - W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
@@ -119,16 +119,20 @@ Next 32Byte : ASCII A-Z
 
 |Device|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
 |:---|:---|:---|:---|:---|:---|
+|MX25L3206E|0x3FFFFF|1024|128|64|C2-20-16|
 |MX25L6473E|0x7FFFFF|2048|256|128|C2-20-17|
 |MX25L12835F|0xFFFFFF|4096|512|256|C2-20-18|
 
-- MX25L6473E   
-![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
-   
+- MX25L3206E   
+![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
+
 JEDEC ID:  
 Byte1 : ManufacturerID(0xc2=Macronix)  
 Byte2 : MemoryType(0x20)  
-Byte3 : Capacity(2^0x17=2^23=0x800000=8M Byte=64M Bit)  
+Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
+
+- MX25L6473E   
+![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
 
 - MX25L12835F   
 ![mx25l12835f](https://user-images.githubusercontent.com/6020549/81371510-04e99d00-9133-11ea-94f7-3fdac64b8e38.jpg)
