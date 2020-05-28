@@ -82,13 +82,13 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 # Winbond
 
-|Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
-|:---|:---|:---|:---|:---|
-|W25Q80|0x0FFFFF|256|32|16|
-|W25Q16|0x1FFFFF|512|64|32|
-|W25Q32|0x3FFFFF|1024|128|64|
-|W25Q64|0x7FFFFF|2048|256|128|
-|W25Q128|0xFFFFFF|4096|512|256|
+|Device|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
+|:---|:---|:---|:---|:---|:---|
+|W25Q80|0x0FFFFF|256|32|16|EF-40-14|
+|W25Q16|0x1FFFFF|512|64|32|EF-40-15|
+|W25Q32|0x3FFFFF|1024|128|64|EF-40-16|
+|W25Q64|0x7FFFFF|2048|256|128|EF-40-17|
+|W25Q128|0xFFFFFF|4096|512|256|EF-40-18|
 
 - W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
@@ -117,10 +117,10 @@ Next 32Byte : ASCII A-Z
 
 # MACRONIX   
 
-|Device|Address range|Number of 4K-Sectors|Number of 32K-Blocks|Number of 64K-Blocks|
-|:---|:---|:---|:---|:---|
-|MX25L6473E|0x7FFFFF|2048|256|128|
-|MX25L12835F|0xFFFFFF|4096|512|256|
+|Device|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
+|:---|:---|:---|:---|:---|:---|
+|MX25L6473E|0x7FFFFF|2048|256|128|C2-20-17|
+|MX25L12835F|0xFFFFFF|4096|512|256|C2-20-18|
 
 - MX25L6473E   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
