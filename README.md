@@ -82,13 +82,13 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 
 # Winbond
 
-|Device|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
-|:---|:---|:---|:---|:---|:---|
-|W25Q80|0x0FFFFF|256|32|16|EF-40-14|
-|W25Q16|0x1FFFFF|512|64|32|EF-40-15|
-|W25Q32|0x3FFFFF|1024|128|64|EF-40-16|
-|W25Q64|0x7FFFFF|2048|256|128|EF-40-17|
-|W25Q128|0xFFFFFF|4096|512|256|EF-40-18|
+|Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
+|:---|:---|:---|:---|:---|:---|:---|
+|W25Q80|1M|0x0FFFFF|256|32|16|EF-40-14|
+|W25Q16|2M|0x1FFFFF|512|64|32|EF-40-15|
+|W25Q32|4M|0x3FFFFF|1024|128|64|EF-40-16|
+|W25Q64|8M|0x7FFFFF|2048|256|128|EF-40-17|
+|W25Q128|16M|0xFFFFFF|4096|512|256|EF-40-18|
 
 - W25Q80   
 ![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
@@ -117,11 +117,11 @@ Next 32Byte : ASCII A-Z
 
 # MACRONIX   
 
-|Device|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
-|:---|:---|:---|:---|:---|:---|
-|MX25L3206E|0x3FFFFF|1024|128|64|C2-20-16|
-|MX25L6473E|0x7FFFFF|2048|256|128|C2-20-17|
-|MX25L12835F|0xFFFFFF|4096|512|256|C2-20-18|
+|Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
+|:---|:---|:---|:---|:---|:---|:---|
+|MX25L3206E|4M|0x3FFFFF|1024|128|64|C2-20-16|
+|MX25L6473E|8M|0x7FFFFF|2048|256|128|C2-20-17|
+|MX25L12835F|16M|0xFFFFFF|4096|512|256|C2-20-18|
 
 - MX25L3206E   
 ![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
