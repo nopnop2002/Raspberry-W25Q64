@@ -139,7 +139,7 @@ Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)
 
 ---
 
-# Eon Silicon Solution
+# Eon Silicon Solution   
 
 |Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
 |:---|:---|:---|:---|:---|:---|:---|
