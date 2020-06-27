@@ -139,6 +139,17 @@ Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)
 
 ---
 
+# Eon Silicon Solution
+
+|Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
+|:---|:---|:---|:---|:---|:---|:---|
+|EN25QH64|8M|0x7FFFFF|2048|256|128|1C-70-17|
+
+- EN25QH64
+![en25qh64](https://user-images.githubusercontent.com/6020549/85917565-22ff8e00-b896-11ea-8352-3aa9c55aafbb.jpg)
+
+---
+
 # Note   
 I tested these.   
 But I couldn't get it working.   
