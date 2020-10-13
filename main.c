@@ -64,7 +64,7 @@ void dump(uint8_t *dt, uint32_t n) {
 int main() {
     uint8_t jedc[3];      // JEDEC-ID
     uint8_t buf[256];     // 取得データ
-    uint8_t wdata[16];    // 書込みデータ
+    uint8_t wdata[26];    // 書込みデータ
     uint8_t i;
     
     uint16_t n;           // 取得データ数
