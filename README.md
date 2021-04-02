@@ -143,10 +143,14 @@ Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)
 
 |Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
 |:---|:---|:---|:---|:---|:---|:---|
+|EN25Q32B|4M|0x3FFFFF|1024|128|64|1C-30-16|
 |EN25QH64|8M|0x7FFFFF|2048|256|128|1C-70-17|
 
 - EN25QH64   
 ![en25qh64](https://user-images.githubusercontent.com/6020549/85917565-22ff8e00-b896-11ea-8352-3aa9c55aafbb.jpg)
+
+- EN25Q32B   
+![en25q32b](https://user-images.githubusercontent.com/6020549/113461820-29401d80-9459-11eb-8eb8-d59331381e5c.jpg)
 
 ---
 
