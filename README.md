@@ -8,8 +8,14 @@ https://github.com/Tamakichi/Arduino-W25Q64
 ---
 
 # Software requirement
-
-WiringPi Library   
+- WiringPi Library   
+ This project uses the wiringPiSPISetup() function to initialize SPI, and use /dev/spidev0.0.   
+ If you use it on a board other than the RPI board, you may need to change the SPI device.   
+ As far as I know, there are these libraries.   
+	- WiringPi for OrangePi   
+	- WiringPi for BananaPi   
+	- WiringPi for NanoPi   
+	- WiringPi for Pine-64   
 
 ---
 
