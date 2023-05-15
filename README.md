@@ -96,7 +96,15 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 |W25Q64|8M|0x7FFFFF|2048|256|128|EF-40-17|
 |W25Q128|16M|0xFFFFFF|4096|512|256|EF-40-18|
 
-- W25Q80   
+The letters BV, CV, FV, and JV in the mark after the volume number indicate operating parameters.   
+For example W25Q64BV, W25Q64CV, W25Q64FV, W25Q64JV are all the same 8 MB flash drives, but with different maximum frequencies and speeds.   
+In theory you could replace slow with fast, but the other way around might not work.   
+- BV: 80MHz  clock operattion   
+- CV: 104MHz clock operattion   
+- FV: 104MHz clock operattion   
+- JV: 133MHz clock operattion   
+
+## W25Q80   
 ![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
 
 JEDEC ID:  
@@ -107,16 +115,16 @@ Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)
 First 10Byte : ASCII 0-9  
 Next 32Byte : ASCII A-Z  
 
-- W25Q16   
+## W25Q16   
 ![w25q16](https://user-images.githubusercontent.com/6020549/81263655-0788bb80-907b-11ea-89ae-092459ec8fad.jpg)
 
-- W25Q32   
+## W25Q32   
 ![w25q32](https://user-images.githubusercontent.com/6020549/81263666-0bb4d900-907b-11ea-9a55-f90f2a60bd5b.jpg)
 
-- W25Q64   
+## W25Q64   
 ![w25q64](https://user-images.githubusercontent.com/6020549/81263674-0fe0f680-907b-11ea-83dc-f806963e34ae.jpg)
 
-- W25Q128   
+## W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 
 ---
