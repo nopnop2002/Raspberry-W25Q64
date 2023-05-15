@@ -99,10 +99,10 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 The letters BV, CV, FV, and JV in the mark after the volume number indicate operating parameters.   
 For example W25Q64BV, W25Q64CV, W25Q64FV, W25Q64JV are all the same 8 MB flash drives, but with different maximum frequencies and speeds.   
 In theory you could replace slow with fast, but the other way around might not work.   
-- BV: 80MHz  clock operattion   
-- CV: 104MHz clock operattion   
-- FV: 104MHz clock operattion   
-- JV: 133MHz clock operattion   
+- BV: 80MHz  clock operation   
+- CV: 104MHz clock operation   
+- FV: 104MHz clock operation   
+- JV: 133MHz clock operation   
 
 ## W25Q80   
 ![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
