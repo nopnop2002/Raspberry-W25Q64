@@ -105,15 +105,16 @@ In theory you could replace slow with fast, but the other way around might not w
 - JV: 133MHz clock operation   
 
 ## W25Q80   
+ JEDEC ID:  
+ Byte1 : ManufacturerID(0xef=Winbond)  
+ Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
+ Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)  
+ 
+ First 10Byte : ASCII 0-9  
+ Next 32Byte : ASCII A-Z  
 ![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
 
-JEDEC ID:  
-Byte1 : ManufacturerID(0xef=Winbond)  
-Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
-Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)  
 
-First 10Byte : ASCII 0-9  
-Next 32Byte : ASCII A-Z  
 
 ## W25Q16   
 ![w25q16](https://user-images.githubusercontent.com/6020549/81263655-0788bb80-907b-11ea-89ae-092459ec8fad.jpg)
