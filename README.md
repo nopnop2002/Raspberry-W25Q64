@@ -145,17 +145,17 @@ In theory you could replace slow with fast, but the other way around might not w
 - MX25L3205D 86MHz serial clock   
 - MX25L3206E 86MHz serial clock   
 
-- MX25L32   
+## MX25L32   
  JEDEC ID:  
  Byte1 : ManufacturerID(0xc2=Macronix)  
  Byte2 : MemoryType(0x20)  
  Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
 ![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
 
-- MX25L64   
+## MX25L64   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
 
-- MX25L128   
+## MX25L128   
 ![mx25l12835f](https://user-images.githubusercontent.com/6020549/81371510-04e99d00-9133-11ea-94f7-3fdac64b8e38.jpg)
 
 ---
@@ -167,10 +167,10 @@ In theory you could replace slow with fast, but the other way around might not w
 |EN25Q32B|4M|0x3FFFFF|1024|128|64|1C-30-16|
 |EN25QH64|8M|0x7FFFFF|2048|256|128|1C-70-17|
 
-- EN25Q32B   
+## EN25Q32B   
 ![en25q32b](https://user-images.githubusercontent.com/6020549/113461820-29401d80-9459-11eb-8eb8-d59331381e5c.jpg)
 
-- EN25QH64   
+## EN25QH64   
 ![en25qh64](https://user-images.githubusercontent.com/6020549/85917565-22ff8e00-b896-11ea-8352-3aa9c55aafbb.jpg)
 
 ---
