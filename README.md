@@ -96,7 +96,7 @@ uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint
 |W25Q64|8M|0x7FFFFF|2048|256|128|EF-40-17|
 |W25Q128|16M|0xFFFFFF|4096|512|256|EF-40-18|
 
-The letters BV, CV, FV, and JV in the mark after the volume number indicate operating parameters.   
+The letters after the volume number indicate operating parameters.   
 For example W25Q64BV, W25Q64CV, W25Q64FV, W25Q64JV are all the same 8 MB flash drives, but with different maximum frequencies and speeds.   
 In theory you could replace slow with fast, but the other way around might not work.   
 - BV: 80MHz  clock operation   
@@ -133,22 +133,29 @@ Next 32Byte : ASCII A-Z
 
 |Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
 |:---|:---|:---|:---|:---|:---|:---|
-|MX25L3206E|4M|0x3FFFFF|1024|128|64|C2-20-16|
-|MX25L6473E|8M|0x7FFFFF|2048|256|128|C2-20-17|
-|MX25L12835F|16M|0xFFFFFF|4096|512|256|C2-20-18|
+|MX25L32|4M|0x3FFFFF|1024|128|64|C2-20-16|
+|MX25L64|8M|0x7FFFFF|2048|256|128|C2-20-17|
+|MX25L128|16M|0xFFFFFF|4096|512|256|C2-20-18|
 
-- MX25L3206E   
+The letters after the volume number indicate operating parameters.   
+For example, MX25L3205, MX25L3205A, MX25L3205D, MX25L3206E are all the same 8 MB flash drives, but with different maximum frequencies and speeds.   
+In theory you could replace slow with fast, but the other way around might not work.   
+- MX25L3205 50MHz serial clock   
+- MX25L3205A 50MHz serial clock   
+- MX25L3205D 86MHz serial clock   
+- MX25L3206E 86MHz serial clock   
+
+- MX25L32   
+ JEDEC ID:  
+ Byte1 : ManufacturerID(0xc2=Macronix)  
+ Byte2 : MemoryType(0x20)  
+ Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
 ![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
 
-JEDEC ID:  
-Byte1 : ManufacturerID(0xc2=Macronix)  
-Byte2 : MemoryType(0x20)  
-Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
-
-- MX25L6473E   
+- MX25L64   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
 
-- MX25L12835F   
+- MX25L128   
 ![mx25l12835f](https://user-images.githubusercontent.com/6020549/81371510-04e99d00-9133-11ea-94f7-3fdac64b8e38.jpg)
 
 ---
