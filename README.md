@@ -105,15 +105,14 @@ In theory you could replace slow with fast, but the other way around might not w
 - JV: 133MHz clock operation   
 
 ## W25Q80   
- JEDEC ID:  
- Byte1 : ManufacturerID(0xef=Winbond)  
- Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
- Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)  
- 
- First 10Byte : ASCII 0-9  
- Next 32Byte : ASCII A-Z  
 ![w25q80](https://user-images.githubusercontent.com/6020549/81263649-05266180-907b-11ea-9508-eb5468807b08.jpg)
 
+- Manufacturer:  
+ Byte1 : ManufacturerID(0xEF=Winbond)  
+ Byte2 : MemoryType(0x40=SPI/0x60=QPI)  
+ Byte3 : Capacity(2^0x14=2^20=0x100000=1M Byte=8M Bit)  
+- First 10Byte : ASCII 0-9  
+- Next 32Byte : ASCII A-Z  
 
 
 ## W25Q16   
@@ -147,11 +146,12 @@ In theory you could replace slow with fast, but the other way around might not w
 - MX25L3206E 86MHz serial clock   
 
 ## MX25L32   
- JEDEC ID:  
- Byte1 : ManufacturerID(0xc2=Macronix)  
+![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
+
+- Manufacturer:  
+ Byte1 : ManufacturerID(0xC2=Macronix)  
  Byte2 : MemoryType(0x20)  
  Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
-![mx25l32l06](https://user-images.githubusercontent.com/6020549/83100824-c4ef5780-a0eb-11ea-8070-2c26d633c7aa.jpg)
 
 ## MX25L64   
 ![mx25l6473e](https://user-images.githubusercontent.com/6020549/81268559-0eb3c780-9083-11ea-8763-71759eb664b2.jpg)
@@ -170,6 +170,11 @@ In theory you could replace slow with fast, but the other way around might not w
 
 ## EN25Q32B   
 ![en25q32b](https://user-images.githubusercontent.com/6020549/113461820-29401d80-9459-11eb-8eb8-d59331381e5c.jpg)
+
+- Manufacturer:  
+ Byte1 : ManufacturerID(0x1C=Eon Silicon Solution)  
+ Byte2 : MemoryType  
+ Byte3 : Capacity(2^0x16=2^22=0x400000=4M Byte=32M Bit)  
 
 ## EN25QH64   
 ![en25qh64](https://user-images.githubusercontent.com/6020549/85917565-22ff8e00-b896-11ea-8352-3aa9c55aafbb.jpg)
