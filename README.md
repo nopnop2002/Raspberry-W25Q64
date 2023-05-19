@@ -138,7 +138,7 @@ In theory you could replace slow with fast, but the other way around might not w
 |MX25L128|16M|0xFFFFFF|4096|512|256|C2-20-18|
 
 The letters after the volume number indicate operating parameters.   
-For example, MX25L3205, MX25L3205A, MX25L3205D, MX25L3206E are all the same 8 MB flash drives, but with different maximum frequencies and speeds.   
+For example, MX25L3205, MX25L3205A, MX25L3205D, MX25L3206E are all the same 4 MB flash drives, but with different maximum frequencies and speeds.   
 In theory you could replace slow with fast, but the other way around might not work.   
 - MX25L3205 50MHz serial clock   
 - MX25L3205A 50MHz serial clock   
