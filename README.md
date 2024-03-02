@@ -5,8 +5,6 @@ I ported from here.
 
 https://github.com/Tamakichi/Arduino-W25Q64
 
----
-
 # Software requirement
 WiringPi Library   
 This project uses the wiringPiSPISetup() function to initialize SPI, and use /dev/spidev0.0.   
@@ -17,16 +15,12 @@ As far as I know, there are these libraries.
 - WiringPi for NanoPi   
 - WiringPi for Pine-64   
 
----
-
 # Build
 ```
 git clone https://github.com/nopnop2002/Raspberry-W25Q64
 cd Raspberry-W25Q64
 make
 ```
-
----
 
 # API
 
@@ -78,13 +72,9 @@ bool W25Q64_eraseAll(bool flgwait);
 // Write data to memory  
 uint16_t W25Q64_pageWrite(uint16_t sect_no, uint16_t inaddr, uint8_t* data, uint16_t n);  
 
----
-
 # Wireing  
 
 ![w25q64](https://cloud.githubusercontent.com/assets/6020549/24319836/446fbc52-116b-11e7-9269-c4769eb4d8f9.jpg)
-
----
 
 # Winbond
 
@@ -127,8 +117,6 @@ In theory you could replace slow with fast, but the other way around might not w
 ## W25Q128   
 ![w25q128](https://user-images.githubusercontent.com/6020549/81263679-12435080-907b-11ea-989e-8f8aa7fd80d0.jpg)
 
----
-
 # MACRONIX   
 
 |Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
@@ -159,8 +147,6 @@ In theory you could replace slow with fast, but the other way around might not w
 ## MX25L128   
 ![mx25l12835f](https://user-images.githubusercontent.com/6020549/81371510-04e99d00-9133-11ea-94f7-3fdac64b8e38.jpg)
 
----
-
 # Eon Silicon Solution   
 
 |Device|# of Bytes|Address range|# of 4K-Sectors|# of 32K-Blocks|# of 64K-Blocks|JEDEC ID|
@@ -178,8 +164,6 @@ In theory you could replace slow with fast, but the other way around might not w
 
 ## EN25QH64   
 ![en25qh64](https://user-images.githubusercontent.com/6020549/85917565-22ff8e00-b896-11ea-8352-3aa9c55aafbb.jpg)
-
----
 
 # Note   
 I tested these.   
